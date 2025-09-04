@@ -6,3 +6,18 @@ button {
     font-size: 1rem;
     font-weight: bold;
 }
+
+button:hover {
+    cursor: pointer;
+}
+
+.saveBtn {
+    background-color: var(--cream);
+    color: var(--black);
+}
+
+.save-btn:hover {
+    background-color: var(--black);
+    color: var(--cream);
+    border: 2px solid var(--cream);
+}

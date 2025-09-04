@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>TO-DO LIST</title>
+</head>
+<body>
+    <main>
+        <h1>TO-DO LIST</h1>
+        <section id="add-task-section">
+            <h2 class="section-title">Adicionar tarefa</h2>
+            <form id="addTask-form" class="task-form">
+                <div class="input-group" >
+                    <label class="input-label" for="title-input">
+                        Título<span class="sign-required" aria-hidden="true">*</span>
+                    </label>
+                    <input id="title-input"
+                        class="text-input"
+                        type="text"  
+                        placeholder="Digite sua tarefa aqui..." 
+                        aria-required="true"
+                        max="50"
+                        aria-errormessage="title-error" 
+                        required 
+                    />
+                    <span id="title-error" class="error-message" aria>{menssagem}</span>
+                </div>
+
+                <div class="input-group" >
+                    <label class="input-label" for="desc-input">
+                        Descrição<span class="optional">(optional)</span>
+                    </label>
+                    <input id="desc-input"
+                        class="text-input"
+                        type="text"  
+                        placeholder="Descreva sua tarefa aqui..."
+                        max="100" 
+                    />
+                </div>
+                <button type="submit" class="save-btn" id="addTask-btn">Salvar</button>
+            </form>
+        </section>
+        <section id="taskList-section">
+            <div id="edit-popup">
+                <form id="editTask-form" class="task-form">
+                <div class="input-group" >
+                    <label class="input-label" for="editTitle-input">
+                        Título<span class="sign-required" aria-hidden="true">*</span>
+                    </label>
+                    <input id="editTitle-input"
+                        class="text-input"
+                        type="text"  
+                        placeholder="Digite sua tarefa aqui..." 
+                        aria-required="true"
+                        max="50"
+                        aria-errormessage="editTitle-error" 
+                        required 
+                    />
+                    <span id="editTitle-error" class="error-message">{menssagem}</span>
+                </div>
+
+                <div class="input-group" >
+                    <label class="input-label" for="editDesc-input">
+                        Descrição<span class="optional">(optional)</span>
+                    </label>
+                    <input id="editDesc-input"
+                        class="text-input"
+                        type="text"  
+                        placeholder="Descreva sua tarefa aqui..."
+                        max="100" 
+                    />
+                </div>
+                <button class="save-btn" type="submit" id="updateTask-btn">Salvar</button>
+            </form>
+            </div>
+            <section id="tasktodo-section">
+                <h2 class="section-title">Pendentes</h2>
+                <ul id="tasktodo-list">
+                    <!-- Tasks will be dynamically added here -->
+                </ul>
+            </section>
+            <section id="taskdone-section">
+                <h2 class="section-title">Concluídas</h2>
+                <ul id="taskdone-list">
+                    <!-- Tasks will be dynamically added here -->
+                </ul>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>Feito por <a href="#">Gabriela Silva</a></p>
+    </footer>
+    <script></script>
+</body>
+</html>

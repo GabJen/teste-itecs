@@ -1,0 +1,47 @@
+/* GENERAL */
+#addTask-section, #edit-popup {
+    background-color: var(--black);
+    color: var(--cream);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* INPUT */
+.text-input{
+    font: var(--body1);
+    display: block;
+    min-height: 44px;
+    width: 100%;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 25px;
+    color: var(--cream);
+    background: none;
+    border: 1.5px solid var(--cream);
+}
+
+input::placeholder {
+    color: var(--gray);
+    opacity: 1; /* Firefox */
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+/* LABEL */
+.input-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--cream);
+}
+
+.sign-required {
+    color: var(--red);
+}
+
+.optional {
+    color: var(--gray);
+}
+

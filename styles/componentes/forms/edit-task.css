@@ -1,0 +1,16 @@
+#editTask-form .input-label {
+    font: var(--label2);
+    margin-bottom: 0.5rem;
+    border-radius: 25px;
+}
+
+#edit-popup {
+    display: flex;
+    width: 21rem;
+    border-radius: 25px;
+    padding: 1.2rem 2rem;
+}
+
+#edit-popup h3 {
+    margin-bottom: 1.2rem;
+}

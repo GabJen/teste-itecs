@@ -28,13 +28,20 @@ EDIT TASK FORM */
 #edit-popup {
     min-width: 21rem;
     max-width: fit-content;
-    position: absolute;
     top: 300px;
     display: none;
 }
 
 #edit-popup.active {
     display: block;
+    position: fixed;
+    top: 10rem;
+    left: 2rem;
+    box-shadow: 0 0 0 100vw rgba(0,0,0,0.8);
+}
+
+#edit-popup .dangerZone-btn {
+    margin-left: .5rem;
 }
 
 #edit-popup h3 {

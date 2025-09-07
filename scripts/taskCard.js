@@ -53,11 +53,15 @@ export function createTaskElement(task) {
         const closeBtn = document.getElementById('close-btn');
 
         popup.classList.add('active');
+        document.body.classList.add('disabled')
         titleEdit.value = task.title;
         descEdit.value = task.desc;
 
         // CLOSE FORM
-        closeBtn.addEventListener('click', () => popup.classList.remove('active'))
+        closeBtn.addEventListener('click', () => {
+            popup.classList.remove('active');
+            document.body.classList.remove('disabled');
+        })
 
         // SAVE UPDATE
         updateBtn.addEventListener('click', () => {

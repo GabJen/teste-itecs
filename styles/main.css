@@ -4,6 +4,7 @@
 @import url('./componentes/buttons.css');
 @import url('./componentes/containers.css');
 @import url('./componentes/task.css');
+@import url('./componentes/task-sections.css');
 
 :root {
     --cream: #FFFDF0;
@@ -33,20 +34,4 @@ main {
 
 .section-title {
     margin-bottom: 1rem;
-}
-
-/* ------------------------------------------------ */
-
-#tasktodo-section {
-    background-color: var(--gray);
-}
-
-#taskdone-section {
-    background-color: var(--light-green);
-}
-
-.task-section {
-    padding: 1.5rem 2.5rem;
-    margin-top: 2rem;
-    width: 100%
 }

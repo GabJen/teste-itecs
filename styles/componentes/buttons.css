@@ -5,9 +5,6 @@ button {
     border: none;
     font-size: 1rem;
     font-weight: bold;
-}
-
-button:hover {
     cursor: pointer;
 }
 
@@ -20,4 +17,34 @@ button:hover {
     background-color: var(--black);
     color: var(--cream);
     border: 2px solid var(--cream);
+}
+
+.editTask-btn {
+    background-color: var(--black);
+    color: var(--cream);
+}
+
+.editTask-btn:hover {
+    background-color: var(--cream);
+    color: var(--black);
+    border: 2px solid var(--black);
+}
+
+.deleteTask-btn {
+    background-color: var(--cream);
+    color: var(--red);
+    border: 2px solid var(--red);
+}
+
+.deleteTask-btn:hover {
+    background-color: var(--red);
+    color: var(--cream);
+}
+
+input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 25px;
+    accent-color: #4EA05D;
+    cursor: pointer;
 }

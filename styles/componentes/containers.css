@@ -1,0 +1,9 @@
+.container {
+    border-radius: 25px;
+    padding: 1.5rem 2.5rem;
+    display: block;
+}
+
+.container-section {
+    max-width: 100%;
+}

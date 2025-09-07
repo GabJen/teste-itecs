@@ -27,3 +27,8 @@ input {
     font-size: 1.25rem;
     font-weight: 600;
 }
+
+.task-title {
+    font-size: 24px;
+    font-weight: 600;
+}

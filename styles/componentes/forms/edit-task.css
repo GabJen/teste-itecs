@@ -5,16 +5,13 @@
 }
 
 #edit-popup {
-    width: 21rem;
-    border-radius: 25px;
-    padding: 1.2rem 2rem;
-
+    min-width: 21rem;
+    max-width: fit-content;
     display: none;
 }
 
 #edit-popup.active {
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
 
 #edit-popup h3 {

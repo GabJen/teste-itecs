@@ -2,18 +2,15 @@
 #addTask-section, #edit-popup {
     background-color: var(--black);
     color: var(--cream);
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
 }
 
-/* INPUT */
+/* -------------------------------------------------------------------------------
+INPUT */
 .text-input{
     font: var(--body1);
     display: block;
-    min-height: 44px;
-    width: 100%;
-    padding: 0 1rem;
+    min-width: 50%;
+    padding: .8rem 1rem;
     border: none;
     border-radius: 25px;
     color: var(--cream);
@@ -30,7 +27,24 @@ input::placeholder {
     margin-bottom: 1.5rem;
 }
 
-/* LABEL */
+.desc-input {
+    min-height: 3rem;
+}
+
+/* -------------------------------------------------------
+ERROR MESSAGE */
+.error-message {
+    color: var(--red);
+    font-size: .8rem;
+    display: none;
+}
+
+.error-message.error {
+    display: block;
+}
+
+/* ---------------------------------------------------------------------
+LABEL */
 .input-label {
     display: block;
     margin-bottom: 0.75rem;

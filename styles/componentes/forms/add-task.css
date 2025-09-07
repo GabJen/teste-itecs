@@ -1,12 +1,6 @@
 #addTask-section {
-    display: flex;
     flex-direction: column;
     gap: 1rem;
-    border-radius: 0 25px 25px 0;
-    position: fixed;
-    min-height: 100%;
-    min-width: 20%;
-    padding: 80px 44px;
-
-    left: 0;
+    max-width: 100%;
+    padding: 1.5rem 2.5rem;
 }

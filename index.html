@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,8 @@
 </head>
 <body>
     <main>
-        <section id="addTask-section">
+        <h1>TO-DO LIST</h1>
+        <section id="addTask-section" class="container container-section">
             <h2 class="section-title">Adicionar tarefa</h2>
             <form id="addTask-form" class="task-form">
                 <div class="input-group" >
@@ -16,7 +17,7 @@
                         Título<span class="sign-required" aria-hidden="true">*</span>
                     </label>
                     <input id="title-input"
-                        class="text-input"
+                        class="text-input title-input"
                         type="text"  
                         placeholder="Digite sua tarefa aqui..." 
                         aria-required="true"
@@ -24,7 +25,7 @@
                         aria-errormessage="title-error" 
                         required 
                     />
-                    <span id="title-error" class="error-message" aria>{menssagem}</span>
+                    <span id="title-error" class="error-message" aria>Este campo é obrigatório</span>
                 </div>
 
                 <div class="input-group" >
@@ -32,18 +33,17 @@
                         Descrição<span class="optional">(optional)</span>
                     </label>
                     <input id="desc-input"
-                        class="text-input"
+                        class="text-input desc-input"
                         type="text"  
                         placeholder="Descreva sua tarefa aqui..."
                         max="100" 
                     />
                 </div>
-                <button type="submit" class="save-btn" id="addTask-btn">Salvar</button>
+                <button type="button" class="save-btn" id="addTask-btn">Salvar</button>
             </form>
         </section>
         <section id="taskList-section">
-            <h1>TO-DO LIST</h1>
-            <div id="edit-popup">
+            <div id="edit-popup" class="container">
                 <h3>Editar tarefa</h3>
                 <form id="editTask-form" class="task-form">
                 <div class="input-group" >
@@ -51,7 +51,7 @@
                         Título<span class="sign-required" aria-hidden="true">*</span>
                     </label>
                     <input id="editTitle-input"
-                        class="text-input"
+                        class="text-input title-input"
                         type="text"  
                         placeholder="Digite sua tarefa aqui..." 
                         aria-required="true"
@@ -59,30 +59,45 @@
                         aria-errormessage="editTitle-error" 
                         required 
                     />
-                    <span id="editTitle-error" class="error-message">{menssagem}</span>
+                    <span id="editTitle-error" class="error-message">Este campo é obrigatório</span>
                 </div>
 
                 <div class="input-group" >
                     <label class="input-label" for="editDesc-input">
                         Descrição<span class="optional">(optional)</span>
                     </label>
-                    <input id="editDesc-input"
-                        class="text-input"
+                    <textarea id="editDesc-input"
+                        class="text-input desc-input"
                         type="text"  
                         placeholder="Descreva sua tarefa aqui..."
                         max="100" 
-                    />
+                    ></textarea>
                 </div>
-                <button class="save-btn" type="submit" id="updateTask-btn">Salvar</button>
+                <button class="save-btn" type="button" id="updateTask-btn">Salvar</button>
             </form>
             </div>
-            <section id="tasktodo-section">
+            <section id="tasktodo-section" class="task-section container container-section">
                 <h2 class="section-title">Pendentes</h2>
                 <ul id="tasktodo-list">
-                    <!-- Tasks will be dynamically added here -->
+                    <!-- <li class="task-item">
+                        <div class="task-card">
+                            <div class="task-status checked" role="checkbox" aria-checked="false" tabindex="0">
+                            </div>
+                            <div class="task-content">
+                                <div class="task-info">
+                                    <h4 class="task-title">Tarefa 1</h4>
+                                    <p class="task-desc">Descrição da tarefa 1</p>
+                                </div>
+                                <div class="task-actions">
+                                    <button class="editTask-btn">Editar</button>
+                                    <button class="deleteTask-btn">Excluir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li> -->
                 </ul>
             </section>
-            <section id="taskdone-section">
+            <section id="taskdone-section" class="task-section container container-section">
                 <h2 class="section-title">Concluídas</h2>
                 <ul id="taskdone-list">
                     <!-- Tasks will be dynamically added here -->
@@ -90,9 +105,6 @@
             </section>
         </section>
     </main>
-    <footer>
-        <p>Feito por <a href="#">Gabriela Silva</a></p>
-    </footer>
-    <script></script>
+    <script src="./scripts/main.js" type="module"></script>
 </body>
 </html>

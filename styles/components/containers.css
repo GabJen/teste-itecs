@@ -7,3 +7,9 @@
 .container-section {
     max-width: 100%;
 }
+
+@media screen and (max-width: 500px){
+    .container {
+        padding: 1rem 1.5rem;
+    }
+}

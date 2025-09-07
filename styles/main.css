@@ -32,6 +32,10 @@ main {
     min-height: 100vh;
 }
 
+h1 {
+    margin-bottom: 1.5rem;
+}
+
 .section-title {
     margin-bottom: 1rem;
 }

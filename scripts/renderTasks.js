@@ -1,26 +1,29 @@
-import { getLocalStorage } from "./storage-manager.js";
 import { createTaskElement } from "./taskCard.js";
+import TaskList from "./TaskList.js";
+import Task from "./Task.js";
 
-export default function renderTasks() {
-    const tasks = getLocalStorage();
+export function renderTasks() {
+    let tasksArray = TaskList.getTaskList();
+    console.log(tasksArray)
     const todosection = document.getElementById('tasktodo-list');
     const doneSection = document.getElementById('taskdone-list');
 
     todosection.innerHTML = '';
     doneSection.innerHTML = '';
 
-    tasks.forEach(task => {
+    tasksArray.forEach(task => {
+        console.log(task)
         if (task.status === "pendente") {
             todosection.appendChild(createTaskElement(task));
         } 
         else if(task.status === "concluido") {
             doneSection.appendChild(createTaskElement(task));
-        } 
+        }
     });
 
     if(!todosection.innerHTML) {
-        todosection.innerHTML = '<li>Não há tarefas pendentes</li>'
+        todosection.innerHTML = todosection.innerHTML === '' ? '<li>Não há tarefas pendentes</li>' : todosection.innerHTML;
     } else if(!doneSection.innerHTML) {
-        doneSection.innerHTML = '<li>Não há tarefas concluídas</li>'
+        doneSection.innerHTML = doneSection.innerHTML === '' ? '<li>Não há tarefas concluidas</li>' : doneSection.innerHTML;
     }
 }

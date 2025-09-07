@@ -1,8 +1,5 @@
-import { storeTasks, getLocalStorage } from './storage-manager.js';
-import {addTask, editTask, delTask, changeStatus} from './actions.js';
-import renderTasks from './renderTasks.js';
-
-const tasks = getLocalStorage()
+import {editTask, delTask, changeStatus} from './actions.js';
+import {renderTasks} from './renderTasks.js';
 
 function create(tagName, className) {
     const item = document.createElement(tagName);
@@ -12,10 +9,22 @@ function create(tagName, className) {
 }
 
 export function createTaskElement(task) {
-    const litem = create('li', 'task-item')
-    const taskCard = create('div', "task-card")
-
+    const litem = create('li', 'task-item');
+    const taskCard = create('div', "task-card");
     const status = create('div', "task-status");
+    const taskCont = create('div', "task-content");
+    const taskInfo = create('div', 'task-info');
+    const title = create('div', 'task-title');
+    const desc = create('div', 'task-desc');
+    const actions = create('div', 'task-actions');
+    const editBtn = create('button', 'editTask-btn');
+    const deleteBtn = create('button', 'deleteTask-btn');
+
+    title.textContent = task.title;
+    desc.textContent = task.desc;
+    editBtn.textContent = 'Editar';
+    deleteBtn.textContent = 'Excluir';
+
     status.setAttribute('role', 'checkbox');
     status.setAttribute('aria-checked', 'false');
     if (task.status === "concluido") {
@@ -26,27 +35,9 @@ export function createTaskElement(task) {
     
     status.addEventListener('click', (e) => {
         const checked = e.target.classList.contains('checked')
-        if(checked) {
-            changeStatus(task, !checked);
-        }
-        else {
-            changeStatus(task, !checked);
-        }
+        changeStatus(task, !checked);
         renderTasks();
     })
-
-    const taskCont = create('div', "task-content");
-    const taskInfo = create('div', 'task-info');
-    const title = create('div', 'task-title')
-    title.textContent = task.title;
-    
-    const desc = create('div', 'task-desc')
-    desc.textContent = task.desc;
-    
-    const actions = create('div', 'task-actions');
-
-    const editBtn = create('button', 'editTask-btn');
-    editBtn.textContent = 'Editar';
 
     editBtn.addEventListener('click', () => {
         const popup = document.getElementById('edit-popup');
@@ -64,24 +55,21 @@ export function createTaskElement(task) {
             const editError = document.getElementById('editTitle-error');
 
             if(!title.trim()) {
-                titleEdit.classList.add('error');
                 editError.classList.add('error');
             }
             else {
-                titleEdit.classList.remove('error');
                 editError.classList.remove('error');
                 editTask(task, title, desc);
                 popup.classList.remove('active');
             }
+            renderTasks()
         })
-        renderTasks()
+        
     })
     
-    const deleteBtn = create('button', 'deleteTask-btn');
-    deleteBtn.textContent = 'Excluir';
     deleteBtn.addEventListener('click', () => {
         delTask(task);
-        renderTasks(tasks);
+        renderTasks();
     })
 
     taskInfo.appendChild(title);

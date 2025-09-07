@@ -1,38 +1,32 @@
 import Task from './Task.js'
-import { storeTasks, getLocalStorage } from './storage-manager.js';
+import TaskList from './TaskList.js';
+import { renderTasks } from './renderTasks.js';
 
-const tasks = getLocalStorage();
+export function addTask(title, desc) {
+    const newTask = new Task(title, desc);
+    TaskList.addTask(newTask);
 
-export function addTask(title, desc, list) {
-    const newTask = new Task(title, desc, list.length + 1);
-    list.push(newTask);
-    storeTasks(list);
-
-    console.log(list);
-    console.log(localStorage);    
+    console.log(newTask + 'is Task' + newTask instanceof Task);
 }
 
-export function changeStatus(task, checked) {
-    if (checked) {
-        task.status = "concluido"
-    } else if (!checked) {
-        task.status = "pendente";
-    }
-
-    storeTasks(tasks)
+export function changeStatus(task, checked) { 
+    task.status = checked ? "concluido" : "pendente";
+    TaskList.updateList()
 }
 
 export function delTask(task) {
-    const filteredList = tasks.filter(item => item !== task);
-    storeTasks(filteredList);
-
-    console.log(tasks);
-    console.log(localStorage);
+    TaskList.deleteTask(task);
 }
 
 export function editTask(task, newTitle, newDesc) {
-    task.title = newTitle;
-    task.desc = newDesc;
+    if (task instanceof Task) {
+        task.desc = newDesc,
+        task.title = newTitle;
 
-    storeTasks(tasks);
+        TaskList.updateList();
+
+    } else {
+        console.log("ooooooops!")
+    }
 }
+

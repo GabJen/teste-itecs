@@ -1,17 +1,13 @@
-import { storeTasks, getLocalStorage } from './storage-manager.js';
 import {addTask} from './actions.js'
-import { createTaskElement } from './taskCard.js';
-import renderTasks from './renderTasks.js'
+import {renderTasks} from './renderTasks.js'
+import TaskList from './TaskList.js'
+import StorageManager from './StorageManager.js';
 
 const addTaskBtn = document.getElementById('addTask-btn');
-
-let tasks = []
 window.onload = () => {
-    if (getLocalStorage()) {
-        tasks = getLocalStorage();
-        renderTasks();
-    }
-}
+    TaskList.updateList(StorageManager.getLocalStorage())
+    renderTasks()
+};
 
 addTaskBtn.addEventListener('click', () => {
     const titleInp = document.getElementById('title-input');
@@ -28,8 +24,10 @@ addTaskBtn.addEventListener('click', () => {
     else {
         titleInp.classList.remove('error');
         errorContainer.classList.remove('error');
-        addTask(title, desc, tasks);
+        addTask(title, desc);
         renderTasks()
     }
+    titleInp.value = '';
+    descInp.value = '';
     
 });

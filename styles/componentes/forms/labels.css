@@ -1,0 +1,13 @@
+.input-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--cream);
+}
+
+.sign-required {
+    color: var(--red);
+}
+
+.optional {
+    color: var(--gray);
+}

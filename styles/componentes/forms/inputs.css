@@ -1,0 +1,24 @@
+.text-input{
+    font: var(--body1);
+    display: block;
+    min-width: 50%;
+    padding: .8rem 1rem;
+    border: none;
+    border-radius: 25px;
+    color: var(--cream);
+    background: none;
+    border: 1.5px solid var(--cream);
+}
+
+input::placeholder {
+    color: var(--gray);
+    opacity: 1; /* Firefox */
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.desc-input {
+    min-height: 3rem;
+}

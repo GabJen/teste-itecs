@@ -53,6 +53,7 @@ export function createTaskElement(task) {
         titleEdit.value = task.title;
         descEdit.value = task.desc;
 
+        // SAVE UPDATE
         updateBtn.addEventListener('click', () => {
             const title = titleEdit.value;
             const desc = descEdit.value;

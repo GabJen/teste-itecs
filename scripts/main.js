@@ -5,7 +5,7 @@ import StorageManager from './StorageManager.js';
 
 const addTaskBtn = document.getElementById('addTask-btn');
 window.onload = () => {
-    TaskList.updateList(StorageManager.getLocalStorage())
+    TaskList.updateList(StorageManager.getLocalStorage()) // Update taskList with localStorage
     renderTasks()
 };
 

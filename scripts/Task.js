@@ -7,23 +7,4 @@ export default class Task {
         this.status = "pendente";
         this.id = id
     }
-    setTitle(newTitle) {
-        this.title = newTitle;
-    }
-
-    setDesc(newDesc) {
-        this.desc = newDesc;
-    }
-
-    setStatus(checked) {
-        this.status = checked ? "concluido" : "pendente";
-    }
-
-    //Transform simple task objects aray into an array of Task's heritages
-    static toTaskTypeList(arr) {
-        const list = arr.map(obj => {
-            new Task (obj.title, obj.desc, obj.id)
-        });
-        return list;
-    }
 }

@@ -1,6 +1,5 @@
 import { createTaskElement } from "./taskCard.js";
 import TaskList from "./TaskList.js";
-import Task from "./Task.js";
 
 export function renderTasks() {
     let tasksArray = TaskList.getTaskList();

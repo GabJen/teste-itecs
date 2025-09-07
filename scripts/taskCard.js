@@ -9,6 +9,7 @@ function create(tagName, className) {
 }
 
 export function createTaskElement(task) {
+    // CREATE ELEMENTS
     const litem = create('li', 'task-item');
     const taskCard = create('div', "task-card");
     const status = create('div', "task-status");
@@ -20,11 +21,13 @@ export function createTaskElement(task) {
     const editBtn = create('button', 'editTask-btn');
     const deleteBtn = create('button', 'deleteTask-btn');
 
+    // ASSIGN TEZT CONTENT
     title.textContent = task.title;
     desc.textContent = task.desc;
     editBtn.textContent = 'Editar';
     deleteBtn.textContent = 'Excluir';
 
+    // CHANGE STATUS FEATURE
     status.setAttribute('role', 'checkbox');
     status.setAttribute('aria-checked', 'false');
     if (task.status === "concluido") {
@@ -39,6 +42,7 @@ export function createTaskElement(task) {
         renderTasks();
     })
 
+    // EDIT TASK FEATURE
     editBtn.addEventListener('click', () => {
         const popup = document.getElementById('edit-popup');
         const titleEdit = document.getElementById('editTitle-input')
@@ -67,11 +71,13 @@ export function createTaskElement(task) {
         
     })
     
+    // DELETE TASK FEATURE
     deleteBtn.addEventListener('click', () => {
         delTask(task);
         renderTasks();
     })
 
+    // ASSIGN ELEMENTS TO ITS PARENTS
     taskInfo.appendChild(title);
     taskInfo.appendChild(desc)
     taskCont.appendChild(taskInfo);

@@ -1,6 +1,5 @@
 import Task from './Task.js'
 import TaskList from './TaskList.js';
-import { renderTasks } from './renderTasks.js';
 
 export function addTask(title, desc) {
     const newTask = new Task(title, desc);

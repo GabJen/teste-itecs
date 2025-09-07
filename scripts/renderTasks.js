@@ -6,7 +6,7 @@ export function renderTasks() {
     console.log(tasksArray)
     const todosection = document.getElementById('tasktodo-list');
     const doneSection = document.getElementById('taskdone-list');
-
+    
     todosection.innerHTML = '';
     doneSection.innerHTML = '';
 
@@ -21,8 +21,9 @@ export function renderTasks() {
     });
 
     if(!todosection.innerHTML) {
-        todosection.innerHTML = todosection.innerHTML === '' ? '<li>Não há tarefas pendentes</li>' : todosection.innerHTML;
-    } else if(!doneSection.innerHTML) {
-        doneSection.innerHTML = doneSection.innerHTML === '' ? '<li>Não há tarefas concluidas</li>' : doneSection.innerHTML;
+        todosection.innerHTML = '<li>Não há tarefas pendentes</li>';
+    }
+    if(!doneSection.innerHTML) {
+        doneSection.innerHTML = '<li>Não há tarefas concluidas</li>';
     }
 }

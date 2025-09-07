@@ -3,7 +3,9 @@ import {renderTasks} from './renderTasks.js';
 
 function create(tagName, className) {
     const item = document.createElement(tagName);
-    item.classList.add(className);
+
+    // In cases of more than one className, they're separeted by a space
+    className.split(" ").forEach(name => item.classList.add(name));
 
     return item;
 }
@@ -19,7 +21,7 @@ export function createTaskElement(task) {
     const desc = create('div', 'task-desc');
     const actions = create('div', 'task-actions');
     const editBtn = create('button', 'editTask-btn');
-    const deleteBtn = create('button', 'deleteTask-btn');
+    const deleteBtn = create('button', 'deleteTask-btn dangerZone-btn');
 
     // ASSIGN TEZT CONTENT
     title.textContent = task.title;
@@ -45,13 +47,17 @@ export function createTaskElement(task) {
     // EDIT TASK FEATURE
     editBtn.addEventListener('click', () => {
         const popup = document.getElementById('edit-popup');
-        const titleEdit = document.getElementById('editTitle-input')
-        const descEdit = document.getElementById('editDesc-input')
-        const updateBtn = document.getElementById('updateTask-btn')
+        const titleEdit = document.getElementById('editTitle-input');
+        const descEdit = document.getElementById('editDesc-input');
+        const updateBtn = document.getElementById('updateTask-btn');
+        const closeBtn = document.getElementById('close-btn');
 
         popup.classList.add('active');
         titleEdit.value = task.title;
         descEdit.value = task.desc;
+
+        // CLOSE FORM
+        closeBtn.addEventListener('click', () => popup.classList.remove('active'))
 
         // SAVE UPDATE
         updateBtn.addEventListener('click', () => {

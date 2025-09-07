@@ -9,7 +9,7 @@ export default class TaskList {
 
     static addTask(task) {
         this.taskArray.push(task);
-        this.storeTasks(this.taskArray);
+        StorageManager.storeTasks(this.taskArray);
     }
 
     static updateList(list = this.getTaskList()) {

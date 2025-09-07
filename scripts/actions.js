@@ -19,14 +19,9 @@ export function delTask(task) {
 }
 
 export function editTask(task, newTitle, newDesc) {
-    if (task instanceof Task) {
-        task.desc = newDesc,
-        task.title = newTitle;
+    task.desc = newDesc;
+    task.title = newTitle;
 
-        TaskList.updateList();
-
-    } else {
-        console.log("ooooooops!")
-    }
+    TaskList.updateList();
 }
 

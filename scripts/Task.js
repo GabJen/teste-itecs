@@ -1,7 +1,7 @@
-import StorageManager from "./StorageManager.js";
+import TaskList from "./TaskList.js";
 
 export default class Task {
-    constructor(title, desc, id = StorageManager.getTaskList().length + 1) {
+    constructor(title, desc, id = TaskList.getTaskList().length + 1) {
         this.title = title;
         this.desc = desc;
         this.status = "pendente";
@@ -19,7 +19,7 @@ export default class Task {
         this.status = checked ? "concluido" : "pendente";
     }
 
-    //Tasnform simple task objects aray into an array of Task's heritages
+    //Transform simple task objects aray into an array of Task's heritages
     static toTaskTypeList(arr) {
         const list = arr.map(obj => {
             new Task (obj.title, obj.desc, obj.id)

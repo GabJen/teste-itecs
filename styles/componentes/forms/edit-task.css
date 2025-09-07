@@ -7,6 +7,7 @@
 #edit-popup {
     min-width: 21rem;
     max-width: fit-content;
+    position: absolute;
     display: none;
 }
 

@@ -40,7 +40,12 @@ main {
 
 /* ------------------------------------------------------- */
 
-ul li {
+.task-list {
+    display: flex;
+    gap: 1rem;
+}
+
+.task-list li {
     list-style: none;
 }
 

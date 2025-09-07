@@ -5,6 +5,7 @@
 @import url('./tipography.css');
 @import url('./componentes/buttons.css');
 @import url('./componentes/containers.css');
+@import url('./componentes/task.css');
 
 :root {
     --cream: #FFFDF0;
@@ -34,56 +35,6 @@ main {
 
 .section-title {
     margin-bottom: 1rem;
-}
-
-
-
-/* ------------------------------------------------------- */
-
-.task-list {
-    display: flex;
-    gap: 1rem;
-}
-
-.task-list li {
-    list-style: none;
-}
-
-.task-card {
-    background-color: var(--cream);
-    border-radius: 25px;
-    display: flex;
-    padding: 1.2rem;
-    align-items: baseline;
-    width: fit-content;
-    margin-bottom: 1rem;
-}
-
-.task-status {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 25px;
-    border: 1px solid var(--black);
-    cursor: pointer;
-    margin-right: .5rem;
-}
-
-.task-status.checked {
-    background-color: #4EA05D;
-}   
-
-.task-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.task-title {
-    margin-bottom: .5rem;
-}
-
-.task-actions {
-    margin-right: .5rem;
 }
 
 /* ------------------------------------------------ */

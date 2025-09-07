@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
-@import url('./componentes/forms/form-containers.css');
+@import url('./components/forms/form-containers.css');
 @import url('./tipography.css');
-@import url('./componentes/buttons.css');
-@import url('./componentes/containers.css');
-@import url('./componentes/task.css');
-@import url('./componentes/task-sections.css');
+@import url('./components/buttons.css');
+@import url('./components/containers.css');
+@import url('./components/task.css');
+@import url('./components/task-sections.css');
 
 :root {
     --cream: #FFFDF0;

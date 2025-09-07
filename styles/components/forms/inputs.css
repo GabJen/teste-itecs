@@ -10,11 +10,6 @@
     border: 1.5px solid var(--cream);
 }
 
-input::placeholder {
-    color: var(--gray);
-    opacity: 1; /* Firefox */
-}
-
 .input-group {
     margin-bottom: 1.5rem;
 }

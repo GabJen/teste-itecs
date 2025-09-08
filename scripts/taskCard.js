@@ -61,8 +61,6 @@ export function createTaskElement(task) {
         function close() {
             popup.classList.remove('active');
             document.body.classList.remove('disabled');
-
-            alert(document.body.classList)
         }
 
         closeBtn.addEventListener('click', () => {

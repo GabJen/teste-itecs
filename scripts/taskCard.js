@@ -58,9 +58,15 @@ export function createTaskElement(task) {
         descEdit.value = task.desc;
 
         // CLOSE FORM
-        closeBtn.addEventListener('click', () => {
+        function close() {
             popup.classList.remove('active');
             document.body.classList.remove('disabled');
+
+            alert(document.body.classList)
+        }
+
+        closeBtn.addEventListener('click', () => {
+            close();
         })
 
         // SAVE UPDATE
@@ -75,8 +81,7 @@ export function createTaskElement(task) {
             else {
                 editError.classList.remove('error');
                 editTask(task, title, desc);
-                popup.classList.remove('active');
-                document.body.classList.remove('disabled');
+                close();
             }
             renderTasks()
         })

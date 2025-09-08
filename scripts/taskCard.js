@@ -76,6 +76,7 @@ export function createTaskElement(task) {
                 editError.classList.remove('error');
                 editTask(task, title, desc);
                 popup.classList.remove('active');
+                document.body.classList.remove('disabled');
             }
             renderTasks()
         })
